@@ -19,17 +19,12 @@ class Book:
         return f"author: {self.book_author} name: {self.book_name} year: {self.book_year} genre: {self.book_genre}"
 
 
-book1 = Book("Jack London", "White Fang", 1892, 122, "Classic")
-book2 = Book("Jack Jordan", "Yellow Fang", 1992, 5, "Comedy")
-book3 = Book("Jack London", "White Fang", 1998, 4, "Classic")
-book4 = Book("Victor Gugo", "Les Miserables", 1843, 67, "Classic")
+book1 = Book("Jack London", "White Fang", 1892, "Classic")
+book2 = Book("Jack Jordan", "Yellow Fang", 1992, "Comedy")
+book3 = Book("Jack London", "White Fang", 1998, "Classic")
+book4 = Book("Victor Gugo", "Les Miserables", 1843, "Classic")
 
-print book1
+print(book1.__repr__())
 print(book1.__str__())
 
-# s = str(p)
-# print(s)
-#
-# print(p.__repr__())
-# print(type(p.__repr__()))
-# print(repr(p))
+
