@@ -25,6 +25,15 @@ book3 = Book("Jack London", "White Fang", 1998, "Classic")
 book4 = Book("Victor Gugo", "Les Miserables", 1843, "Classic")
 
 print(book1.__repr__())
+print(book2.__repr__())
+print(book3.__repr__())
+print(book4.__repr__())
+
+print()
+
 print(book1.__str__())
+print(book2.__str__())
+print(book3.__str__())
+print(book4.__str__())
 
 
