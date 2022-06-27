@@ -12,6 +12,9 @@ class Book:
         self.book_year = book_year
         self.book_genre = book_genre
 
+    def __eq__(self, other):
+            return self.book_author == other.author and self.book_name == other.name
+
     def __repr__(self):
         return f"author: {self.book_author} name: {self.book_name} year: {self.book_year} genre: {self.book_genre}"
 
