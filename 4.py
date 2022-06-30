@@ -11,18 +11,30 @@ class Car:
         self.model_name = model_name
         self.price = price
 
+    def cars(self):
+        print(f"Фирма - {self.company}, модель - {self.model_name}, цена - {self.price}")
+
 
 car1 = Car('Honda', 'Jazz', 900000)
 car2 = Car('Suzuki', 'Alto', 450000)
 car3 = Car('BMW', 'X5', 9000000)
 
-print(f"1 - {car1}  \n2 - {car2}  \n3 - {car3}")
+# car1.cars()
+# car2.cars()
+# car3.cars()
 
 
 class Salon(Car):
     cars = [car1, car2, car3]
 
+    @staticmethod
+    def sale_cars():
+        print(f"1 - {car1} \n2 - {car2} \n3 - {car3}")
+
+    sale_cars()
     x = input("Выберите машину для покупки: ")
 
     if x in cars:
-        print(f"Поздравляем! Вы купили {x} С Вас {self.price} грн.")
+        print(f"Поздравляем! Вы купили {x} С Вас  грн.")
+
+
