@@ -5,36 +5,52 @@
 
 
 class Car:
-
-    def __init__(self, company, model_name, price):
-        self.company = company
-        self.model_name = model_name
+    def __init__(self, brand, color, price, model):
+        self.brand = brand
+        self.color = color
         self.price = price
-
-    def cars(self):
-        print(f"Фирма - {self.company}, модель - {self.model_name}, цена - {self.price}")
+        self.model = model
 
 
-car1 = Car('Honda', 'Jazz', 900000)
-car2 = Car('Suzuki', 'Alto', 450000)
-car3 = Car('BMW', 'X5', 9000000)
+class Salon:
+    def __init__(self, cars):
+        self.cars = cars
 
-# car1.cars()
-# car2.cars()
-# car3.cars()
+        self.show()
+
+    def show(self):
+        global flag
+
+        flag = False
+
+        for car in self.cars:
+            print(f"{self.cars.index(car) + 1}.) {car.brand} {car.model} with {car.color} color and price = "
+                  f"{car.price}$")
+            flag = True
+
+    def sell(self, number_of_car):
+        car = self.cars[number_of_car - 1]
+
+        print(f"\nThe car {car.brand} {car.model} was sold!\n")
+
+        del self.cars[number_of_car - 1]
 
 
-class Salon(Car):
-    cars = [car1, car2, car3]
+car1 = Car("Mercedes", "green", 100000, "S-Class")
+car2 = Car("BMW", "green", 70000, "i8")
+car3 = Car("Toyota", "green", 30000, "Camry")
+car4 = Car("Chevrolet", "green", 80000, "Camaro")
+car5 = Car("Porsche", "green", 20000000, "911")
 
-    @staticmethod
-    def sale_cars():
-        print(f"1 - {car1} \n2 - {car2} \n3 - {car3}")
+flag = True
 
-    sale_cars()
-    x = input("Выберите машину для покупки: ")
+salon = Salon([car1, car2, car3, car4, car5])
 
-    if x in cars:
-        print(f"Поздравляем! Вы купили {x} С Вас  грн.")
+while flag:
+    buy = int(input("\nWhich number to you want to buy?: "))
+
+    salon.sell(buy)
+    salon.show()
+
 
 
