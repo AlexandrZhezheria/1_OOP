@@ -24,7 +24,7 @@ class Salon:
         flag = False
 
         for car in self.cars:
-            print(f"{self.cars.index(car) + 1}.) {car.brand} {car.model} with {car.color} color and price = "
+            print(f"{self.cars.index(car) + 1}.-> {car.brand} {car.model} with {car.color} color and price = "
                   f"{car.price}$")
             flag = True
 
